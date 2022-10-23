@@ -1,0 +1,16 @@
+apiVersion: app.fybrik.io/v1alpha1
+kind: FybrikApplication
+metadata:
+  name: @{{fybrik_app_name}}
+  namespace: fybrik-notebook-sample
+spec:
+  selector:
+   workloadSelector:
+     matchLabels: {}
+  appInfo:
+    intent: Fraud Detection
+    role: Security
+  data:
+    - dataSetID: 'fybrik-notebook-sample/paysim-csv'
+      flow: @{{action_type}}
+      requirements: {}

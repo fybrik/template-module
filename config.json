@@ -1,0 +1,8 @@
+{ 
+    "module_name": "delete-module", 
+    "module_chart": "delete-module-chart", 
+    "fybrik_app_name": "delete-app", 
+    "action_type": "delete", 
+    "chart_repo": "ghcr.io/fybrik/delete-module-chart:0.0.0", 
+    "image_repo": "ghcr.io/fybrik/delete-module"
+}

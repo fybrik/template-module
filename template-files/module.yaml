@@ -1,0 +1,25 @@
+# Copyright 2020 IBM Corp.
+# SPDX-License-Identifier: Apache-2.0
+
+apiVersion: app.fybrik.io/v1alpha1
+kind: FybrikModule
+metadata:
+  name: @{{action_type}}
+  namespace: fybrik-system
+spec:
+  chart:
+    name: @{{chart_repo}}:0.0.0
+  type: service
+  capabilities:
+    - capability: @{{action_type}}
+      api:
+          connection:
+            name: @{{module_name}}
+            @{{module_name}}:
+              hostname: "{{ .Release.Name }}.{{ .Release.Namespace }}"
+              port: 80
+              scheme: grpc
+      supportedInterfaces: 
+      - source:
+          protocol: s3
+

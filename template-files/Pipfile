@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[[source]]
+name = "testpypi"
+url = "https://test.pypi.org/simple"
+verify_ssl = true
+
+[packages]
+requests = "*"
+boto3 = "*"
+fybrik_python_vault = {version="0.1.0", index="testpypi"}
+pyyaml = "*"
+fybrik-python-logging = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

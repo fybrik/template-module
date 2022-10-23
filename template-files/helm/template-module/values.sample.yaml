@@ -1,0 +1,30 @@
+assets:
+- args:
+  - connection:
+      name: s3
+      s3:
+        bucket: demo
+        endpoint: http://localstack.fybrik-notebook-sample.svc.cluster.local:4566
+        object_key: PS_20174392719_1491204439457_log.csv
+    format: csv
+    vault:
+      @{{action_type}}:
+        address: http://vault.fybrik-system:8200
+        authPath: /v1/auth/kubernetes/login
+        role: module
+        secretPath: /v1/kubernetes-secrets/paysim-csv?namespace=fybrik-notebook-sample
+  assetID: fybrik-notebook-sample/paysim-csv
+  capability: @{{action_type}}
+context:
+  intent: Fraud Detection
+  role: Security
+labels:
+  app.fybrik.io/app-name: @{{fybrik_app_name}}
+  app.fybrik.io/app-namespace: fybrik-notebook-sample
+  app.fybrik.io/blueprint-name: @{{fybrik_app_name}}-fybrik-notebook-sample
+  app.fybrik.io/blueprint-namespace: fybrik-system
+  razee/watch-resource: debug
+selector: {}
+uuid: fb8c5895-1159-4506-ac69-afd61f5189f2
+
+
