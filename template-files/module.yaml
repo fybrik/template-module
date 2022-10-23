@@ -1,14 +1,14 @@
 # Copyright 2020 IBM Corp.
 # SPDX-License-Identifier: Apache-2.0
 
-apiVersion: app.fybrik.io/v1alpha1
+apiVersion: app.fybrik.io/v1beta1
 kind: FybrikModule
 metadata:
   name: @{{action_type}}
   namespace: fybrik-system
 spec:
   chart:
-    name: @{{chart_repo}}:0.0.0
+    name: @{{chart_repo}}
   type: service
   capabilities:
     - capability: @{{action_type}}

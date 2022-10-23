@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: {{ include "@{{module_name}}.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "@{{module_name}}name" . }}
+    app.kubernetes.io/name: {{ include "@{{module_name}}.name" . }}
     helm.sh/chart: {{ include "@{{module_name}}.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}

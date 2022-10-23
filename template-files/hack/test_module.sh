@@ -159,7 +159,7 @@ ${TOOLBIN}/kubectl wait --for=condition=complete --all job -n fybrik-blueprints
 
 # Check if test succeeded
 POD_NAME=$(${TOOLBIN}/kubectl get pods -n fybrik-blueprints -o=name | sed "s/^.\{4\}//")
-TEST_RES=$(${TOOLBIN}/kubectl logs $POD_NAME -n fybrik-blueprints | grep "Successfully deleted object" | wc -l)
+TEST_RES=$(${TOOLBIN}/kubectl logs $POD_NAME -n fybrik-blueprints | grep "Successfully done" | wc -l)
 
 # Terminate notebook-sample
 pkill kubectl
