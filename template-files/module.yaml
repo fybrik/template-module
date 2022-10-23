@@ -8,7 +8,7 @@ metadata:
   namespace: fybrik-system
 spec:
   chart:
-    name: @{{chart_repo}}:0.0.0
+    name: @{{chart_repo}}
   type: service
   capabilities:
     - capability: @{{action_type}}
